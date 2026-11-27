@@ -1,1 +1,1 @@
-"""gridcore: power system analysis written from scratch (Y-bus and Newton-Raphson power flow)."""
+"""gridcore: power system analysis written from scratch (power flow, short circuit, state estimation)."""
