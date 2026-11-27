@@ -1,0 +1,3 @@
+IEEE 14-bus: 82 measurements, corrupted ('P', 8) -> flagged [('P', 8)]; J 1089 before, 48.4 after (chi2 limit 81.1); max |V| error 0.0024 pu, max angle error 0.181 deg
+IEEE 30-bus: 172 measurements, corrupted ('Qf', 11) -> flagged [('Qf', 11)]; J 3696 before, 104.4 after (chi2 limit 149.7); max |V| error 0.0043 pu, max angle error 0.263 deg
+IEEE 118-bus: 726 measurements, corrupted ('P', 40) -> flagged [('P', 40)]; J 1849 before, 486.0 after (chi2 limit 565.8); max |V| error 0.0020 pu, max angle error 0.110 deg
