@@ -17,6 +17,20 @@ from scipy.sparse import csr_matrix
 from .case import (F_BUS, T_BUS, BR_R, BR_X, BR_B, TAP, SHIFT, BR_STATUS, GS, BS)
 
 
+def branch_admittances(branch):
+    """Per-branch pi-model terms for in-service branches: (from bus, to bus, Yff, Yft)."""
+    on = branch[:, BR_STATUS].real > 0
+    br = branch[on]
+    f = br[:, F_BUS].real.astype(int)
+    t = br[:, T_BUS].real.astype(int)
+    ys = 1.0 / (br[:, BR_R].real + 1j * br[:, BR_X].real)
+    tap = br[:, TAP].real.copy()
+    tap[tap == 0] = 1.0
+    tap = tap * np.exp(1j * np.deg2rad(br[:, SHIFT].real))
+    Ytt = ys + 1j * br[:, BR_B].real / 2
+    return f, t, Ytt / (tap * np.conj(tap)), -ys / np.conj(tap)
+
+
 def make_ybus(baseMVA, bus, branch):
     nb = bus.shape[0]
     on = branch[:, BR_STATUS].real > 0
