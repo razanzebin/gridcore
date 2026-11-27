@@ -1,0 +1,5 @@
+    case iters   max |dVm| (pu)  max |dVa| (deg)
+   14-bus     4         4.44e-16         2.13e-14  converged=True
+   30-bus     4         8.88e-16         4.93e-14  converged=True
+  118-bus     5         1.22e-15         5.04e-13  converged=True
+  300-bus     5         2.52e-13         2.66e-11  converged=True
